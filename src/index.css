@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import "@fontsource/anton";
+@import "@fontsource-variable/eb-garamond";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme {
+  /* Warna */
+  --color-arsip: #141414;
+  --color-tinta: #ffffff;
+  --color-abu: #8c8c8c;
+  --color-kertas: #f4f1ea;
+  --color-krem: #f6ebd9;
+
+  --color-map-merah: #e30000;
+  --color-map-biru: #2a1fe0;
+  --color-map-hijau: #00705a;
+  --color-map-ungu: #52006b;
+  --color-map-hitam: #000000;
+  --color-map-kuning: #ffe600;
+  --color-kertas-teal: #6bb5b0;
+  --color-catatan: #ffc93c;
+
+  /* Font */
+  --font-display: "Anton", "Oswald", Impact, sans-serif;
+  --font-serif: "EB Garamond Variable", "EB Garamond", "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Bentuk */
+  --radius-tab: 28px 28px 0 0;
+  --radius-kertas: 2px;
+  --shadow-kertas: 0 6px 14px rgb(0 0 0 / 0.35);
+}
+
+@layer base {
+  html { 
+    background-color: var(--color-arsip); 
+    color: var(--color-tinta); 
+  }
+  body { 
+    font-family: var(--font-serif); 
+    font-size: 1.125rem; 
+    line-height: 1.5; 
+    min-height: 100vh;
+  }
+  :focus-visible { 
+    outline: 3px solid var(--color-map-kuning); 
+    outline-offset: 3px; 
+  }
+}
+
+/* Tema "Kertas" (terang) */
+[data-theme="kertas"] {
+  --color-arsip: #f4f1ea;
+  --color-tinta: #141414;
+  --color-abu: #5c5c5c;
+  --color-kertas: #ffffff;
+  --color-krem: #ece4d2;
+}
+
+/* Torn edge clip path for ReminderPaper */
+.torn-paper-edge {
+  clip-path: polygon(
+    0% 0%,
+    3% 4px,
+    6% 0%,
+    9% 4px,
+    12% 0%,
+    15% 4px,
+    18% 0%,
+    21% 4px,
+    24% 0%,
+    27% 4px,
+    30% 0%,
+    33% 4px,
+    36% 0%,
+    39% 4px,
+    42% 0%,
+    45% 4px,
+    48% 0%,
+    51% 4px,
+    54% 0%,
+    57% 4px,
+    60% 0%,
+    63% 4px,
+    66% 0%,
+    69% 4px,
+    72% 0%,
+    75% 4px,
+    78% 0%,
+    81% 4px,
+    84% 0%,
+    87% 4px,
+    90% 0%,
+    93% 4px,
+    96% 0%,
+    100% 4px,
+    100% 100%,
+    0% 100%
+  );
+}
+
+/* Blueprint grid pattern */
+.blueprint-grid {
+  background-color: #1e3a8a;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 10px 10px, 10px 10px;
+}
